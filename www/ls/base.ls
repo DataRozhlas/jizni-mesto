@@ -12,3 +12,10 @@ if ig.containers['demografie-all']
     ..attr \class "ig map"
   new ig.JizakMap mapContainer
     ..drawDemography01!
+
+if ig.containers['byty']
+  container = d3.select that
+  mapContainer = container.append \div
+    ..attr \class "ig map"
+  new ig.JizakMap mapContainer
+    ..drawByty!

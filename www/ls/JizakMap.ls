@@ -39,6 +39,26 @@ class ig.JizakMap extends ig.GenericMap
     layer.addTo @map
 
 
+  drawByty: ->
+    geojson =
+      type: "FeatureCollection"
+      features: allGeojson.features.filter -> it.properties.neobydlene_byty_pct isnt null
+    colorScale = d3.scale.threshold!
+      ..domain [3.16 4.28 5.59 9.46 13.34 22.4]
+      ..range ['rgb(255,245,240)','rgb(254,224,210)','rgb(252,187,161)','rgb(252,146,114)','rgb(251,106,74)','rgb(239,59,44)','rgb(203,24,29)','rgb(153,0,13)']
+    layer = L.geoJson do
+      * geojson
+      * style: (feature) ->
+          color: colorScale feature.properties.neobydlene_byty_pct
+          fillOpacity: 0.5
+          weight: 1
+        onEachFeature: (feature, layer) ~>
+          layer.on \mouseover ~> @displayBytyPopup feature, layer
+          layer.on \click ~> @displayBytyPopup feature, layer
+    @lastHighlightedLayer = null
+    layer.addTo @map
+
+
   drawDemography: ->
     geojson =
       type: "FeatureCollection"
@@ -59,9 +79,6 @@ class ig.JizakMap extends ig.GenericMap
     layer.addTo @map
 
   displayDemoPopup: (feature, layer)->
-    @lastHighlightedLayer.setStyle weight: 2, fillOpacity: 0.5 if @lastHighlightedLayer
-    @lastHighlightedLayer = layer
-    layer.setStyle weight: 5, fillOpacity: 0.8
     ele = d3.select document.createElement "div"
     ele.append \b .html feature.properties.NAZ_ZSJ
     pop = for year in <[obyv_80 obyv_90 obyv_01 obyv_11]>
@@ -84,8 +101,21 @@ class ig.JizakMap extends ig.GenericMap
           ..attr \width 40
           ..append \line
             ..attr x1: "50%", x2: "50%", y2: "100%"
+    @displayPopup feature, layer, ele.node!
 
+
+  displayBytyPopup: (feature, layer)->
+    content = "<strong>#{feature.properties.NAZ_ZSJ}</strong><br>
+    #{ig.utils.formatNumber feature.properties.neobydlene_byty_pct, 1} % bytů je zde neobydlených"
+    @displayPopup feature, layer, content
+
+
+  displayPopup: (feature, layer, content) ->
+    @lastHighlightedLayer.setStyle weight: 2, fillOpacity: 0.5 if @lastHighlightedLayer
+    @lastHighlightedLayer = layer
+    layer.setStyle weight: 5, fillOpacity: 0.8
     popup = L.popup autoPan: no, className: "demo-popup"
-      ..setContent ele.node!
+      ..setContent content
       ..setLatLng feature.centroid
       ..openOn @map
+
