@@ -15,8 +15,7 @@ ig.fit = ->
         .tween "scroll" scrollTween offset
   $body.prepend $hero
 
-  $ '#article h1' .html 'Kolik nás stojí &bdquo;pevnost Evropa&#8221;'
-  $ '#article .perex' .html 'Za utěsnění hranic před uprchlíky zaplatí Evropané každý rok přes miliardu eur. Běženci dají zhruba stejnou částku převaděčům, aby je přes tyto bariéry dostali. Patnáct novinářů z devíti zemí pátralo po tom, jak protiimigrační opatření Evropské unie fungují, kdo na nich<br>profituje – a kdo na ně doplácí.'
+  $ '#article h1' .html 'Panelstory 2015: Sídliště bez lidí?'
 
   $filling = $ "<div class='ig filling'></div>"
     ..css \height $hero.height! + 50
