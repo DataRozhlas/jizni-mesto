@@ -40,8 +40,11 @@ class ig.JizakMap extends ig.GenericMap
     ele.append \b .html feature.properties.NAZ_ZSJ
     pop = for year in <[obyv_80 obyv_90 obyv_01 obyv_11]>
       feature.properties[year]
+    maxPop = d3.max pop
     ele.append \ul
+      ..style \height "#{50 + maxPop / 100}px"
       ..selectAll \li .data pop .enter!append \li
+        ..style \height "#{50 + maxPop / 100}px"
         ..classed \nan -> it is null
         ..append \span
           ..attr \class \year
