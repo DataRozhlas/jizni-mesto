@@ -24,8 +24,8 @@ overlayTextColor = white
     text-align left
     z-index 40
   p.perex
-    position absolute
-    top 252px
+    position relative
+    top 112px
     left 100px
     width 445px
     font-weight 100
@@ -138,7 +138,7 @@ div.hero
   bottom 0px
   width 100%
   min-width 1000px
-  background #6 url('https://samizdat.cz/data/vyhosteni/www/img/cover2.jpg') no-repeat center bottom
+  background #6 url('./img/cover.jpg') no-repeat center bottom
   background-size cover
   .overlay
     position absolute
@@ -146,7 +146,8 @@ div.hero
     left 0px
     bottom 0px
     width 100%
-    background linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 25%);
+    background linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 25%);
+    // background linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.3) 25%);
     position absolute
   span.copy
     color overlayTextColor
