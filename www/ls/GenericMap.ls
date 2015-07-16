@@ -8,6 +8,7 @@ class ig.GenericMap
         zoom: @mapZoom
         center: @mapCenter
         maxBounds: @mapBounds
+        scrollWheelZoom: no
 
     @map.on \moveend ~>
       c = @map.getCenter!
