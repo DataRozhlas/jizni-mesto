@@ -1,2 +1,0 @@
-class ig.PrahaMap
-  ->

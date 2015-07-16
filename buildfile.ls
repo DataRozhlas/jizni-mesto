@@ -16,7 +16,7 @@ externalData =
   "dochod": "#__dirname/data/domy_dochod.topo.json"
 
 preferScripts = <[ postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
-deferScripts = <[ geoUtils.js base.js ]>
+deferScripts = <[ JizakMap.js DochodMap.js geoUtils.js base.js ]>
 develOnlyScripts = <[ _loadData.js _loadExternal.js]>
 gzippable = <[ www/index.deploy.html www/script.deploy.js ]>
 safe-deployable =

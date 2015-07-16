@@ -49,6 +49,41 @@
             shape-rendering crispEdges
   .leaflet-control-zoom a
     color #4 !important
+  ul.legend
+    position absolute
+    top 10px
+    right 10px
+    z-index 1000
+    background white
+    border 3px solid #a
+    margin 0px !important
+    padding 4px 0px 4px 15px !important
+    list-style none !important
+    border-radius 4px
+    li
+      padding-left 7px
+      margin 0px !important
+      float left
+      width 100%
+      clear both
+      input
+        float left
+        clear both
+        position relative
+        top 7px
+      label
+        float left
+        display block
+        padding 4px 16px 4px 10px
+        text-decoration none
+        color #0
+        font-family 'Roboto'
+        cursor pointer
+        transition color 0.2s
+      input:checked + label
+        color desaturate(ColorRed, 50%)
+      label:hover
+        color ColorRed !important
 
 &.fullscreen
   height 550px
@@ -66,3 +101,6 @@
   &.fullscreen-high
   &.fullscreen-high > .map
     height 630px
+  &.fullscreen-high-2
+  &.fullscreen-high-2 > .map
+    height 670px
