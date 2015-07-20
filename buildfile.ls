@@ -14,6 +14,7 @@ externalData =
   "style": "#__dirname/www/screen.css"
   "demografie": "#__dirname/data/zsj_demo.topo.json"
   "dochod": "#__dirname/data/domy_dochod.topo.json"
+  "cesticky": "#__dirname/data/cesticky.topo.json"
 
 preferScripts = <[ postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[ JizakMap.js DochodMap.js geoUtils.js base.js ]>

@@ -122,6 +122,19 @@ class ig.JizakMap extends ig.GenericMap
             ..attr x1: "50%", x2: "50%", y2: "100%"
     @displayPopup feature, layer, ele.node!
 
+  drawCesticky: ->
+    geojson = topojson.feature do
+      ig.data.cesticky
+      ig.data.cesticky.objects."data"
+    layer = L.geoJson do
+      * geojson
+      * style: (feature) ->
+          color: \#ab0000
+          weight: 3
+          opacity: 1
+          clickable: no
+    layer.addTo @map
+
 
   displayBytyPopup: (feature, layer)->
     content = "<strong>#{feature.properties.NAZ_ZSJ}</strong><br>

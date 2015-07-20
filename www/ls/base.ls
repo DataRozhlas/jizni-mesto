@@ -33,3 +33,11 @@ if ig.containers['duchodci']
     ..attr \class "ig map"
   new ig.JizakMap mapContainer
     ..drawDuchodci!
+
+
+if ig.containers['cesticky']
+  container = d3.select that
+  mapContainer = container.append \div
+    ..attr \class "ig map"
+  new ig.JizakMap mapContainer, 'jizak'
+    ..drawCesticky!
