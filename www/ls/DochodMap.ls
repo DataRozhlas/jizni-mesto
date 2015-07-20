@@ -16,6 +16,7 @@ class ig.DochodMap extends ig.GenericMap
     @layer = L.geoJson do
       * geojson
       * style: (feature) ~>
+          clickable: no
           color: @colorScale feature.properties.dochod_MS
           stroke: no
           opacity: 1
