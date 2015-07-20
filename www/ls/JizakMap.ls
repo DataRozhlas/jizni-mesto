@@ -15,7 +15,7 @@ class ig.JizakMap extends ig.GenericMap
       @mapZoom = 14
     else
       @mapBounds = L.latLngBounds [49.9366,14.0625] [50.2143,14.9229]
-      @mapCenter = [50.0769,14.4906]
+      @mapCenter = [50.0602,14.4906]
       @mapZoom = 11
     super ...
 
@@ -55,6 +55,25 @@ class ig.JizakMap extends ig.GenericMap
         onEachFeature: (feature, layer) ~>
           layer.on \mouseover ~> @displayBytyPopup feature, layer
           layer.on \click ~> @displayBytyPopup feature, layer
+    @lastHighlightedLayer = null
+    layer.addTo @map
+
+  drawDuchodci: ->
+    geojson =
+      type: "FeatureCollection"
+      features: allGeojson.features.filter -> it.properties.duchod_11_pct isnt null
+    colorScale = d3.scale.threshold!
+      ..domain [5 10 15 20 25 30]
+      ..range ['rgb(254,230,206)','rgb(253,208,162)','rgb(253,174,107)','rgb(253,141,60)','rgb(241,105,19)','rgb(217,72,1)','rgb(166,54,3)','rgb(127,39,4)']
+    layer = L.geoJson do
+      * geojson
+      * style: (feature) ->
+          color: colorScale feature.properties.duchod_11_pct
+          fillOpacity: 0.5
+          weight: 1
+        onEachFeature: (feature, layer) ~>
+          layer.on \mouseover ~> @displayDuchodciPopup feature, layer
+          layer.on \click ~> @displayDuchodciPopup feature, layer
     @lastHighlightedLayer = null
     layer.addTo @map
 
@@ -107,6 +126,11 @@ class ig.JizakMap extends ig.GenericMap
   displayBytyPopup: (feature, layer)->
     content = "<strong>#{feature.properties.NAZ_ZSJ}</strong><br>
     #{ig.utils.formatNumber feature.properties.neobydlene_byty_pct, 1} % bytů je zde neobydlených"
+    @displayPopup feature, layer, content
+
+  displayDuchodciPopup: (feature, layer) ->
+    content = "<strong>#{feature.properties.NAZ_ZSJ}</strong><br>
+    Zde žije #{ig.utils.formatNumber feature.properties.duchod_11_pct, 1} % důchodců"
     @displayPopup feature, layer, content
 
 
