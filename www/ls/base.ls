@@ -8,6 +8,7 @@ window.acceptData = (data) ->
     feature.properties.demoRatio = feature.properties.obyv_11 / feature.properties.obyv_90
     feature.properties.demoRatio01 = feature.properties.obyv_11 / feature.properties.obyv_01
     feature.centroid = d3.geo.centroid feature .reverse!
+
   visualizations =
     * element: ig.containers.demografie
       init: (container) ->
@@ -45,6 +46,10 @@ window.acceptData = (data) ->
           ..attr \class "ig map"
         new ig.JizakMap mapContainer, 'jizak'
           ..drawCesticky!
+    * element: ig.containers['duchodci-graph']
+      init: (container) ->
+        new ig.DuchodciGraph container
+  visualizations .= filter (.element)
   recalculateOffsets = ->
     for visualization in visualizations
       visualization.offset = ig.utils.offset visualization.element .top

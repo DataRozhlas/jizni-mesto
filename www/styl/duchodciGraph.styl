@@ -1,0 +1,42 @@
+&.duchodci-graph
+  float left
+  clear both
+  position relative
+  width 500px
+  height 300px
+  padding-top 50px
+  padding-bottom 55px
+  margin-left 250px
+  font-family 'Roboto', sans-serif
+  .item
+    float left
+    width 25%
+    height 100%
+    position relative
+    &:last-child
+      margin-left 25%
+    .name
+      position absolute
+      bottom -30px
+      width 100%
+      text-align center
+      font-weight 700
+    .count
+      position absolute
+      bottom 0px
+      left 0px
+      width 100%
+      text-align center
+      padding-bottom 8px
+      font-weight 500
+    svg
+      position absolute
+      bottom 0px
+      left 50%
+      transform translate(-50%,0)
+      line
+        stroke-width 50
+        stroke ColorRed
+        stroke-dasharray 1, 1
+        shape-rendering crispEdges
+
