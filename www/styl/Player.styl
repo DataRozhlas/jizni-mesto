@@ -1,0 +1,70 @@
+&.player
+  width 100%
+  float left
+  height 300px
+  margin-left 250px
+  width 500px
+  margin-bottom 15px
+  position relative
+  border-top 1px solid #a
+  border-bottom 1px solid #a
+  background #fa
+  background linear-gradient(to bottom, #fafafa 0%, #fff 75%);
+  img
+    position absolute
+    right 7px
+    top 20px
+    height (@height - @top)
+    width auto
+
+  h2
+  h3
+    margin 0px 0px 0px 17px
+  h2
+    margin-top 16px
+    font-weight 900
+    font-size 1.5em
+  h3
+    font-size 1.3em
+    margin-top 10px
+    font-weight 400
+    font-style italic
+  audio
+    position absolute
+    bottom 0px
+    width 500px
+  ol
+    list-style-type none
+    margin 30px 0px 0px 30px
+    padding 0px
+    li
+      a
+        display block
+        padding 4px 0px 4px 28px
+        color black
+        text-decoration none
+        position relative
+        &:before
+          content "▶"
+          position absolute
+          left 0px
+          top 4px
+          color white
+          border-radius 50%
+          width 18px
+          padding-left 1px
+          text-align center
+          font-size 12px
+          height @width
+          background-color ColorRed
+          opacity 0
+          transition opacity 0.6s, background-color 0.2s
+        &.active:before
+        &:hover:before
+          opacity 1
+        &:hover:before
+          background-color lighten(ColorRed, 20%)
+    &:hover li a.active:before
+      opacity 0
+    &:hover li a.active:hover:before
+      opacity 1

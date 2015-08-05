@@ -76,3 +76,6 @@ window.acceptData = (data) ->
         checkScrollPosition!
       500
 
+
+if ig.containers['player-pisova']
+  new ig.Player (d3.select that), 'pisova'
