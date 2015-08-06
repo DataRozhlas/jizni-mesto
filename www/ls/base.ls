@@ -60,7 +60,6 @@ window.acceptData = (data) ->
     for index in [visualizationsInUse.length - 1 to 0 by -1]
       visualization = visualizationsInUse[index]
       if visualization.offset <= top
-        console.log "A"
         visualizationsInUse.splice index, 1
         visualization.init do
           d3.select visualization.element

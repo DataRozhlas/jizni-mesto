@@ -15,18 +15,12 @@ class ig.GenericMap
       b = @map.getBounds!
       b1 = [b.getSouthWest!lat, b.getSouthWest!lng]
       b2 = [b.getNorthEast!lat, b.getNorthEast!lng]
-      # for bb in [b1, b2]
-      #   L.marker bb
-      #     ..addTo @map
       b1 = b1
         .map (.toFixed 4)
         .join ","
       b2 = b2
         .map (.toFixed 4)
         .join ","
-      console.log do
-        [c.lat, c.lng].join ","
-        "[#{b1}] [#{b2}]"
 
     baseLayer = L.tileLayer do
       * "https://samizdat.cz/tiles/ton_b1/{z}/{x}/{y}.png"
