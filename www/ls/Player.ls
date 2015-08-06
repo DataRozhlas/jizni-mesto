@@ -11,6 +11,18 @@ data =
         title: "Aenean varius aliquet viverra"
       * time: 120
         title: "Cras ultricies velit vitae"
+  'malanikova':
+    title: "Hana Malaníková"
+    subtitle: "Na sídlišti vždycky seženete drogy"
+    chapters:
+      * time: 0
+        title: "Lorem ipsum dolor sit amel"
+      * time: 20
+        title: "Sed quis turpis laoreet"
+      * time: 60
+        title: "Aenean varius aliquet viverra"
+      * time: 120
+        title: "Cras ultricies velit vitae"
 
 
 class ig.Player

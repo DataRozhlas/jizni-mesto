@@ -78,3 +78,6 @@ window.acceptData = (data) ->
 
 if ig.containers['player-pisova']
   new ig.Player (d3.select that), 'pisova'
+
+if ig.containers['player-malanikova']
+  new ig.Player (d3.select that), 'malanikova'
