@@ -81,3 +81,5 @@ if ig.containers['player-pisova']
 
 if ig.containers['player-malanikova']
   new ig.Player (d3.select that), 'malanikova'
+if ig.containers['boxes']
+  ig.containers['boxes'].innerHTML = ig.boxContent
