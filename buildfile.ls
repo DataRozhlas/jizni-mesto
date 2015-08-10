@@ -11,10 +11,11 @@ externalStyles =
   ...
 
 externalData =
-  "style": "#__dirname/www/screen.css"
-  # "demografie": "#__dirname/data/zsj_demo.topo.json"
-  # "dochod": "#__dirname/data/domy_dochod.topo.json"
-  # "cesticky": "#__dirname/data/cesticky.topo.json"
+  # "style": "#__dirname/www/screen.css"
+  "poi": "#__dirname/data/poi.topo.json"
+  "demografie": "#__dirname/data/zsj_demo.topo.json"
+  "dochod": "#__dirname/data/domy_dochod.topo.json"
+  "cesticky": "#__dirname/data/cesticky.topo.json"
 
 preferScripts = <[ postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[ JizakMap.js DochodMap.js geoUtils.js base.js ]>
@@ -88,6 +89,7 @@ download-external-data = (cb) ->
       data = JSON.parse data
     out[key] = data
     cb!
+  console.error err if err
   <~ fs.writeFile "#__dirname/www/data.js", "window.ig.data = #{JSON.stringify out};"
   # <~ fs.writeFile "#__dirname/www/data.js", "window.acceptData(#{JSON.stringify out});"
   console.log "Data combined"

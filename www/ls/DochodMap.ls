@@ -25,6 +25,30 @@ class ig.DochodMap extends ig.GenericMap
 
     @layer.addTo @map
     @drawLegend!
+    {features: @poiFeatures} = topojson.feature ig.data.poi, ig.data.poi.objects['data']
+    @updatePoi \dochod_MS
+
+  updatePoi: (type) ->
+    typesToProps =
+      \dochod_MHD         : "mhd"
+      \dochod_MS          : "ms"
+      \dochod_ZS          : "zs"
+      \dochod_hriste      : "hriste"
+      \dochod_potraviny   : "potraviny"
+      \dochod_sportoviste : "sportoviste"
+    poiType = typesToProps[type]
+    features = @poiFeatures.filter -> it.properties.TYP == poiType
+    options = color: \#003366 fillOpacity: 0.3 opacity: 0.8, radius: 10
+    markers = for feature in features
+      marker = L.circleMarker do
+        [feature.geometry.coordinates.1, feature.geometry.coordinates.0]
+        options
+      marker.bindPopup feature.properties.jmeno
+      marker
+    @map.removeLayer @poiGroup if @poiGroup
+    @poiGroup = L.layerGroup markers
+      ..addTo @map
+
 
   drawLegend: ->
     names =
@@ -49,6 +73,7 @@ class ig.DochodMap extends ig.GenericMap
           value = @value
           self.layer.setStyle (feature) ->
             color: self.colorScale feature.properties[value]
+          self.updatePoi value
         ..attr \checked (d, i) -> if i == 0 then "checked" else void
       ..append \label
         ..html -> names[it]
