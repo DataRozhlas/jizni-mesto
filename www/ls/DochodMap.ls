@@ -43,7 +43,7 @@ class ig.DochodMap extends ig.GenericMap
       marker = L.circleMarker do
         [feature.geometry.coordinates.1, feature.geometry.coordinates.0]
         options
-      marker.bindPopup feature.properties.jmeno
+      marker.bindPopup feature.properties.jmeno || "Hřiště"
       marker
     @map.removeLayer @poiGroup if @poiGroup
     @poiGroup = L.layerGroup markers
