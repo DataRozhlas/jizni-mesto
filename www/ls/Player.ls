@@ -17,16 +17,24 @@ data =
         title: "Jak se vám tedy na Jižním Městě žije?"
   'malanikova':
     title: "Hana Malaníková"
-    subtitle: "Na sídlišti vždycky seženete drogy"
+    subtitle: "Profesorka chemie bydlí na Jižním Městě skoro 40 let"
     chapters:
       * time: 0
-        title: "Lorem ipsum dolor sit amel"
-      * time: 20
-        title: "Sed quis turpis laoreet"
-      * time: 60
-        title: "Aenean varius aliquet viverra"
-      * time: 120
-        title: "Cras ultricies velit vitae"
+        title: "Jak jste se dostala do filmu Věry Chytilové Panelstory?"
+      * time: 99.56
+        title: "Jak vypadalo Jižní Město, když jste se přistěhovala?"
+      * time: 151.63
+        title: "Nevadilo vám, že tu chyběly obchody?"
+      * time: 189.18
+        title: "Jak zvládáte dlouhé dojíždění do práce?"
+      * time: 317.15
+        title: "Je něco, co na Jižním Městě postrádáte, za čím musíte do centra?"
+      * time: 357.8
+        title: "Jak se na sídlišti změnilo složení obyvatel?"
+      * time: 438.5
+        title: "Jak se tady žije dnes?"
+      * time: 525
+        title: "Vadí vám tu vůbec něco?"
 
 
 class ig.Player
