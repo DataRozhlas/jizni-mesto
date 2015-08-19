@@ -15,7 +15,7 @@ ig.fit = ->
         .tween "scroll" scrollTween offset
   $body.prepend $hero
 
-  $ '#article h1' .html 'Panelstory 2015: Sídliště bez lidí?'
+  $ '#article h1' .html 'Jižní Město – sídliště bez lidí?'
 
   $filling = $ "<div class='ig filling'></div>"
     ..css \height $hero.height! + 50
