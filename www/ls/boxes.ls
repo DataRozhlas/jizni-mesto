@@ -1,5 +1,5 @@
 ig.boxContent = '<h2>Jižní Město I (výstavba 1970 – 1985)</h2>
-  <a href="https://samizdat.blob.core.windows.net/storage/jizni-mesto-full-1.jpg" target="_blank"><img src="https://samizdat.blob.core.windows.net/storage/jizni-mesto-1.jpg" alt=""></a>
+  <a href="https://samizdat.blob.core.windows.net/storage/jizni-mesto-full-2.jpg" target="_blank"><img src="https://samizdat.blob.core.windows.net/storage/jizni-mesto-2.jpg" alt=""></a>
   <p><i>Repro z knihy MRÁČKOVÁ, Markéta (ed.), Barbora ŠIMONOVÁ (ed.) a Viktor VEJVODA (ed.). Legenda o sídlišti. 2014. Akademie výtvarných umění v Praze, 2014. s. 94 - 95.</i></p>
 
   <ul>
@@ -12,7 +12,7 @@ ig.boxContent = '<h2>Jižní Město I (výstavba 1970 – 1985)</h2>
   </ul>
 
   <h2>Jižní Město II (výstavba 1979 – 1992)</h2>
-  <a href="https://samizdat.blob.core.windows.net/storage/jizni-mesto-full-2.jpg" target="_blank"><img src="https://samizdat.blob.core.windows.net/storage/jizni-mesto-2.jpg" alt=""></a>
+  <a href="https://samizdat.blob.core.windows.net/storage/jizni-mesto-full-1.jpg" target="_blank"><img src="https://samizdat.blob.core.windows.net/storage/jizni-mesto-1.jpg" alt=""></a>
   <p><i>Repro z knihy MRÁČKOVÁ, Markéta (ed.), Barbora ŠIMONOVÁ (ed.) a Viktor VEJVODA (ed.). Legenda o sídlišti. 2014. Akademie výtvarných umění v Praze, 2014. s. 116 - 117.</i></p>
 
   <ul>
