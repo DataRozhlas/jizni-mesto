@@ -17,7 +17,7 @@ data =
         title: "Jak se vám tedy na Jižním Městě žije?"
   'malanikova':
     title: "Hana Malaníková"
-    subtitle: "Profesorka chemie bydlí na Jižním Městě skoro 40 let"
+    subtitle: "Profesorka chemie bydlí na Jižním Městě 37 let"
     chapters:
       * time: 0
         title: "Jak jste se dostala do filmu Věry Chytilové Panelstory?"
